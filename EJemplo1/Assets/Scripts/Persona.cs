@@ -8,7 +8,7 @@ namespace packagePersona
     public class Persona
     {
 
-        private string namep;
+        private string nameP;
         private string mailP;
         private string dirP;
 
@@ -16,14 +16,14 @@ namespace packagePersona
         {
         }
 
-        public Persona(string namep, string mailP, string dirP)
+        public Persona(string nameP, string mailP, string dirP)
         {
-            this.namep = namep;
+            this.nameP = nameP;
             this.mailP = mailP;
             this.dirP = dirP;
         }
 
-        public string Namep { get => namep; set => namep = value; }
+        public string Namep { get => nameP; set => nameP = value; }
         public string MailP { get => mailP; set => mailP = value; }
         public string DirP { get => dirP; set => dirP = value; }
     }
