@@ -12,6 +12,8 @@ namespace packagePersona
         private string mailP;
         private string dirP;
 
+
+        //-----------------------Constructor
         public Persona()
         {
         }
@@ -23,6 +25,8 @@ namespace packagePersona
             this.dirP = dirP;
         }
 
+
+        //----------------------------- gets y Sets----------------------
         public string Namep { get => nameP; set => nameP = value; }
         public string MailP { get => mailP; set => mailP = value; }
         public string DirP { get => dirP; set => dirP = value; }

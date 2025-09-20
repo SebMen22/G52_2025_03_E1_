@@ -9,9 +9,12 @@ namespace packagePersona
         private string codeE;
         private string nameCarreraE;
 
+
+        //----------------------------Constructor--------------------------
         public Estudiante()
         {
         }
+
 
         public Estudiante(string codeE, string nameCarreraE, string nameP, string mailP, string dirP)
             : base(nameP, mailP, dirP)
@@ -19,6 +22,8 @@ namespace packagePersona
             this.codeE = codeE;
             this.nameCarreraE = nameCarreraE;
         }
+
+        ////----------------------------Sets y gets--------------------------
 
         public string CodeE { get => codeE; set => codeE = value; }
         public string NameCarreraE { get => nameCarreraE; set => nameCarreraE = value; }

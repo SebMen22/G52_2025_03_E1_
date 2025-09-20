@@ -1,36 +1,23 @@
 using UnityEngine;
-using System;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-using System;
-using UnityEngine;
-
-
-namespace packagePunto2D
+public class PanelMouseTracker : MonoBehaviour, IPointerMoveHandler
 {
-    [Serializable]
+    private RectTransform panelRectTransform;
 
-    public class Punto2D : MonoBehaviour
+    void Start()
     {
-
-        public double x;
-        public double y;
-
-
-        public Punto2D()
-        {
-        }
-
-        public Punto2D(double x, double y)
-        {
-            this.x = x;
-            this.y = y;
-        }
-
-        public double X { get => x; set => x = value; }
-        public double Y { get => y; set => y = value; }
-
-
-
+        // Obtener el componente RectTransform del panel
+        panelRectTransform = GetComponent<RectTransform>();
     }
 
-}
+    public void OnPointerMove(PointerEventData eventData)
+    {
+        // Convertir las coordenadas del cursor (en píxeles de pantalla) a coordenadas locales dentro del panel
+        Vector2 localCursor;
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            panelRectTransform,
+            eventData.position, // Posición del cursor en píxeles de pantalla
+            eventData.pressEventCamera, // Cámara del Canvas (puede ser null para Canvas en Overlay)
+            out localCursor
